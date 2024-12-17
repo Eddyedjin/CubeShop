@@ -1,0 +1,33 @@
+.producto-card {
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-card-header {
+    background-color: #007bff; // Color de fondo azul
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  ion-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; // Texto blanco
+  }
+  
+  ion-card-subtitle {
+    font-size: 1.2rem;
+    color: #e0e0e0; // Texto gris claro
+    margin-bottom: 8px;
+  }
+  
+  ion-card-content {
+    padding: 16px;
+    background-color: #f8f9fa; // Fondo gris claro
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  

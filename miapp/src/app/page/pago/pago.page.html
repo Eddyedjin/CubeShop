@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Forma de Pago</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <form [formGroup]="paymentForm" (ngSubmit)="confirmarPago()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Método de Pago</ion-label>
+        <ion-select formControlName="metodoPago" placeholder="Seleccione uno" (ionChange)="onMetodoPagoChange()">
+          <ion-select-option value="credito">Tarjeta de Crédito</ion-select-option>
+          <ion-select-option value="debito">Tarjeta de Débito</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="paymentForm.get('metodoPago')?.invalid && paymentForm.get('metodoPago')?.touched">
+        <ion-text style="font-weight: bold; color: black;">El método de pago es obligatorio</ion-text>
+      </div>
+
+      <!-- Campos adicionales solo si se ha seleccionado un método de pago -->
+      <div *ngIf="paymentForm.get('metodoPago')?.value">
+        <ion-item>
+          <ion-label position="stacked">Número de Tarjeta</ion-label>
+          <ion-input type="text" formControlName="numeroTarjeta" placeholder="Ingrese el número de la tarjeta"></ion-input>
+        </ion-item>
+        <div *ngIf="paymentForm.get('numeroTarjeta')?.invalid && paymentForm.get('numeroTarjeta')?.touched">
+          <ion-text style="font-weight: bold; color: black;">El número de tarjeta es obligatorio y debe tener 16 dígitos</ion-text>
+        </div>
+
+        <ion-item>
+          <ion-label position="stacked">Fecha de Expiración</ion-label>
+          <ion-input type="text" formControlName="fechaExpiracion" placeholder="MM/AA"></ion-input>
+        </ion-item>
+        <div *ngIf="paymentForm.get('fechaExpiracion')?.invalid && paymentForm.get('fechaExpiracion')?.touched">
+          <ion-text style="font-weight: bold; color: black;">La fecha de expiración es obligatoria</ion-text>
+        </div>
+
+        <ion-item>
+          <ion-label position="stacked">CVV</ion-label>
+          <ion-input type="password" formControlName="cvv" placeholder="Código de seguridad"></ion-input>
+        </ion-item>
+        <div *ngIf="paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched">
+          <ion-text style="font-weight: bold; color: black;">El CVV es obligatorio y debe tener entre 3 y 4 dígitos</ion-text>
+        </div>
+
+        <ion-button expand="full" type="submit" [disabled]="paymentForm.invalid">Confirmar Pago</ion-button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
+

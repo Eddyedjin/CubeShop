@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Nuevo Producto </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="productForm" (ngSubmit)="onFormSubmit()">
+    <!--Nombre-->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="prod_name"></ion-input>
+    </ion-item>
+    <!--Descripcion-->
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="prod_desc"></ion-textarea>
+    </ion-item>
+    <!--Color-->
+    <ion-item>
+      <ion-label position="floating">Color</ion-label>
+      <ion-input type="text" formControlName="prod_color"></ion-input>
+    </ion-item>
+    <!--Precio-->
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" formControlName="prod_precio"></ion-input>
+    </ion-item>
+    <!--Stock-->
+    <ion-item>
+      <ion-label position="floating">Stock</ion-label>
+      <ion-input type="number" formControlName="prod_stock"></ion-input>
+    </ion-item>
+    <!--Activo-->
+    <ion-item>
+      <ion-label position="floating">Activo</ion-label>
+      <ion-checkbox formControlName="prod_activo"></ion-checkbox>
+    </ion-item>    
+    <!--id_img-->
+    <ion-item>
+      <ion-label position="floating">id Img</ion-label>
+      <ion-input type="text" formControlName="prod_id_img"></ion-input>
+    </ion-item>
+    <!--id_tipo-->
+    <ion-item>
+      <ion-label position="floating">id Tipo</ion-label>
+      <ion-input type="text" formControlName="prod_id_tipo"></ion-input>
+    </ion-item>
+    <!--id_sucursal-->
+    <ion-item>
+      <ion-label position="floating">id Sucursal</ion-label>
+      <ion-input type="text" formControlName="prod_id_sucursal"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!productForm.valid">Submit</ion-button>
+  </form>
+</ion-content>

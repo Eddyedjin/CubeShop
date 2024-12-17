@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sucursal</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      <font color="yellow">
+        <ion-button [routerLink]="['/sucursal-add'] " class="custom-button">Agregar</ion-button>
+        <ion-button class="custom-button" (click)="recargar()">Recargar</ion-button>
+      </font>
+    </ion-label>
+  </ion-item>
+  
+  <ion-list padding>
+    <!-- Recorremos el arreglo de registros utilizando item-->
+    <ion-item *ngFor="let p of this.sucursales">
+      <!-- Icono al inicio (start) -->
+      <ion-icon name="storefront" slot="start"></ion-icon>
+      
+      <!-- Campos de item -->
+      <ion-label>
+        <h2>{{p.nombre}}</h2>
+        <p>Id Sucursal: {{p.id}}</p>
+      </ion-label>
+      
+      <!-- Botones de acción -->
+      <!-- routerlink salta a otra pagina-->
+      <ion-button [routerLink]="['/sucursal-edit/',p?.id]" class="custom-button">Edit</ion-button><br />
+      <!-- routerlink salta a otra pagina, pero con id del item-->
+      <ion-button [routerLink]="['/sucursal-detail/',p?.id]" class="custom-button">Detail</ion-button><br />
+    </ion-item>
+  </ion-list>
+</ion-content>

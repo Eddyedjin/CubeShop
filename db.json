@@ -1,0 +1,225 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Cubo Rubik 3x3",
+      "descripcion": "exampleas",
+      "color": "Negro",
+      "precio": 20000,
+      "stock": 567,
+      "activo": true,
+      "id_img": 1,
+      "id_tipo": 1,
+      "id_sucursal": 1
+    }
+  ],
+  "imagenes": [
+    {
+      "id": "5b48",
+      "nombre": "cuboRubik3x3",
+      "ruta": "assets/Placeholder/productos/cuboRubik3x3.png"
+    },
+    {
+      "id": "f6e4",
+      "nombre": "cuboRubik2x2",
+      "ruta": "assets/Placeholder/productos/cuboRubik2x2.png"
+    },
+    {
+      "id": "24e6",
+      "nombre": "cuboRubik6x6",
+      "ruta": "assets/Placeholder/productos/cuboRubik6x6.png"
+    },
+    {
+      "id": "0013",
+      "nombre": "cubo2x2Koffing",
+      "ruta": "assets/Placeholder/productos/cubo2x2Koffing.png"
+    },
+    {
+      "id": "cfa0",
+      "nombre": "cuboMegaminxMeffert",
+      "ruta": "assets/Placeholder/productos/cuboMegaminxMeffert.png"
+    },
+    {
+      "id": "04dd",
+      "nombre": "cuboRubik3x3Gan365M",
+      "ruta": "assets/Placeholder/productos/cuboRubik3x3Gan365M.png"
+    },
+    {
+      "id": "9f3b",
+      "nombre": "cuboRubikTimeMachine",
+      "ruta": "assets/Placeholder/productos/cuboRubikTimeMachine.png"
+    },
+    {
+      "id": "45ba",
+      "nombre": "lubricanteCuboGan",
+      "ruta": "assets/Placeholder/productos/lubricanteCuboGan.png"
+    }
+  ],
+  "tipo_producto": [
+    {
+      "id": "d5c3",
+      "descripcion": "Cubo",
+      "ruta": "assets/Placeholder/placeholder-cubico.png"
+    },
+    {
+      "id": "76c2",
+      "descripcion": "Otro",
+      "ruta": "assets/Placeholder/placeholder-otros.png"
+    },
+    {
+      "id": "afwe",
+      "descripcion": "Otro cubos",
+      "ruta": "assets/Placeholder/placeholder-otros-cubos.png"
+    },
+    {
+      "id": "affs",
+      "descripcion": "Modificaciones",
+      "ruta": "assets/Placeholder/placeholder-modificaciones.png"
+    },
+    {
+      "id": "afww",
+      "descripcion": "Sticker",
+      "ruta": "assets/Placeholder/placeholder-sticker.png"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "3320",
+      "nombre": "Juan",
+      "app": "Pérez",
+      "apm": "García",
+      "correoelectronico": "juan.perez@example.com",
+      "contrasenia": "contraseña123",
+      "id_tipo_user": 1
+    },
+    {
+      "id": "d565",
+      "nombre": "Ana",
+      "app": "Martínez",
+      "apm": "López",
+      "correoelectronico": "ana.martinez@example.com",
+      "contrasenia": "password456",
+      "id_tipo_user": 2
+    },
+    {
+      "id": "8dce",
+      "nombre": "Carlos",
+      "app": "Hernández",
+      "apm": "Jiménez",
+      "correoelectronico": "carlos.hernandez@example.com",
+      "contrasenia": "carlo7890",
+      "id_tipo_user": 1
+    },
+    {
+      "id": "a20e",
+      "nombre": "Laura",
+      "app": "Gómez",
+      "apm": "Morales",
+      "correoelectronico": "laura.gomez@example.com",
+      "contrasenia": "laura2024",
+      "id_tipo_user": 3
+    },
+    {
+      "id": "0f31",
+      "nombre": "Pedro",
+      "app": "Sánchez",
+      "apm": "Fernández",
+      "correoelectronico": "pedro.sanchez@example.com",
+      "contrasenia": "pedro321",
+      "id_tipo_user": 2
+    },
+    {
+      "id": "001a",
+      "nombre": "María",
+      "app": "Rodríguez",
+      "apm": "Cruz",
+      "correoelectronico": "maria.rodriguez@example.com",
+      "contrasenia": "maria456",
+      "id_tipo_user": 1
+    },
+    {
+      "id": "16cd",
+      "nombre": "Luis",
+      "app": "Torres",
+      "apm": "Reyes",
+      "correoelectronico": "luis.torres@example.com",
+      "contrasenia": "luis7890",
+      "id_tipo_user": 3
+    },
+    {
+      "id": "9c1e",
+      "nombre": "Sofía",
+      "app": "Vázquez",
+      "apm": "Moreno",
+      "correoelectronico": "sofia.vazquez@example.com",
+      "contrasenia": "sofia123",
+      "id_tipo_user": 2
+    },
+    {
+      "id": "7a93",
+      "nombre": "José",
+      "app": "Mendoza",
+      "apm": "Paredes",
+      "correoelectronico": "jose.mendoza@example.com",
+      "contrasenia": "jose2024",
+      "id_tipo_user": 1
+    },
+    {
+      "id": "d56e",
+      "nombre": "Valeria",
+      "app": "Gutiérrez",
+      "apm": "Salazar",
+      "correoelectronico": "valeria.gutierrez@example.com",
+      "contrasenia": "valeria456",
+      "id_tipo_user": 3
+    }
+  ],
+  "tipo_user": [
+    {
+      "id": "074c",
+      "descripcion": "Usuario Normal"
+    },
+    {
+      "id": "a912",
+      "descripcion": "Administrador"
+    }
+  ],
+  "sucursales": [
+    {
+      "id": "2",
+      "nombre": "Sucursal Mall",
+      "id_direccion": 1
+    },
+    {
+      "id": "1",
+      "nombre": "Sucursal Mall Plaza Sur",
+      "id_direccion": 1
+    }
+  ],
+  "direcciones": [
+    {
+      "id": "c29f",
+      "region": "Estado",
+      "comuna": "Ciudad Capital",
+      "calle": "Calle del Sol 101",
+      "piso": "Piso 2",
+      "apartamento": "Apto 5B"
+    },
+    {
+      "id": "56b0",
+      "region": "Estado2",
+      "comuna": "ciudad 2",
+      "calle": "calle del 2",
+      "piso": "piso 2",
+      "apartamento": "Apto 2"
+    },
+    {
+      "id": "ad25",
+      "region": "Maipu",
+      "comuna": "Cap. 321",
+      "calle": "calle del mar 14",
+      "piso": "piso 2",
+      "apartamento": "Apto 213"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cesta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--Productos-->
+<ion-content>
+  <!--Recorre la lista de lCubos-->
+  <ion-item *ngFor="let producto of cesta">
+    <!-- Card -->
+    <ion-card class="custom-card-size">
+      <div class="card-inner">
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="card-image">
+        <div class="card-text-content">
+          <ion-card-header class="custom-card-header">
+            <ion-card-title class="custom-card-title">{{ producto.nombre }}</ion-card-title>
+            <ion-card-subtitle class="custom-card-subtitle">
+              {{ producto.cantidad }} x ${{ producto.precio }} CLP
+            </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+      </div>
+    </ion-card>
+
+    <!-- Botones -->
+    <div class="icon-buttons">
+      <ion-icon (click)="remove(producto)" class="icon-large" style="color: #f36565" name="trash"></ion-icon>
+    </div>
+  </ion-item>
+
+  <ion-grid style="padding-top: 75px;" *ngIf="xx.obtenerCesta.length === 0">
+    <div class="my-loader">
+      <div class="rubiks-cube">
+        <div class="face front">
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+          <div style="background: #ff3d00;" class="cube"></div>
+        </div>
+
+
+        <div class="face back">
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+          <div style="background: #f79133;" class="cube"></div>
+        </div>
+
+
+        <div class="face left">
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+          <div style="background: #4caf50;" class="cube"></div>
+        </div>
+
+
+        <div class="face right">
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+          <div style="background: #2196f3;" class="cube"></div>
+        </div>
+
+
+        <div class="face top">
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+          <div style="background: #ffffff;" class="cube"></div>
+        </div>
+
+
+        <div class="face bottom">
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+          <div style="background: #ffeb3b;" class="cube"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <ion-row class="ion-justify-content-center" style="padding-top: 50px;">
+      <ion-label>
+        <p class="signin"> <ion-icon name="sad" slot="start"></ion-icon> No tienes nigun producto en tu cesta... <a
+          [routerLink]="['/tabinicial/inicio']">Busca
+            aquí.</a> </p>
+      </ion-label>
+    </ion-row>
+
+
+  </ion-grid>
+
+  <!--Scroll-->
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+
+<!--Carta con total y botónes Realizar Pedido, Cancelar -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>TOTAL: ${{totalCarrito}} CLP</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-button [routerLink]="['/page/pago']" class="custom-button">Realizar pedido</ion-button>
+    <ion-button class="custom-button-delete" (click)="cancelar()">Cancelar</ion-button>
+  </ion-card-content>
+</ion-card>

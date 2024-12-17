@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar class="search-bar" placeholder="Buscar" animated (ionChange)="searchProduct($event)"></ion-searchbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-label class="enfasis">
+        <h2>Búsqueda</h2>
+      </ion-label>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-margin-bottom">
+      <ion-col class="right-pad" size="6" size-md="6" size-lg="3" size-xl="2" *ngFor="let producto of searchedProduct">
+        <div class="card-container">
+          <ion-card [routerLink]="['/page/detalleproducto', producto.id]" class="article-wrapper">
+            <div class="container-project">
+              <img src="../../../../../{{producto.img ? producto.img.ruta : 'assets/Placeholder/placeholder-cubico.png'}}" 
+       alt="Imagen del Producto" />
+            </div>
+            <ion-card-header>
+              <ion-card-title class="project-title">{{ producto.nombre }}</ion-card-title>
+              <ion-card-subtitle class="text-body">${{ producto.precio }}</ion-card-subtitle>
+              <ion-card-subtitle class="text-body">
+                Categoría: {{ producto.tipo ? producto.tipo.descripcion : 'Desconocido' }} 
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content class="project-info">
+              <div class="card-footer">
+                <ion-button class="card-button">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </ion-button>
+                <ion-button class="card-button">
+                  <ion-icon name="cart"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+    
+
+
+
+
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-img src="https://docs-demo.ionic.io/assets/madison.jpg" alt="Imagen representativa"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-label class="enfasis">
+        <h2>Comprar por categorías</h2>
+      </ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" size-md="6" size-lg="3" size-xl="2" *ngFor="let tipo of tiposProducto">
+        <div class="article-wrapper">
+          <div class="container-project">
+            <img [src]="tipo.ruta" class="responsive-img" alt="{{ tipo.descripcion }}" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">{{ tipo.descripcion }}</h3>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+</ion-content>

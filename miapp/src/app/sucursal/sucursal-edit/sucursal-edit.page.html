@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sucursal-edit</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="sucursalForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">ID de la sucursal</ion-label>
+      <ion-input type="text" [value]="sucursal.id" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de la sucursal</ion-label>
+      <ion-input type="text" formControlName="sucu_nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Id Direccion</ion-label>
+      <ion-input type="text" formControlName="suc_id_dire"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!sucursalForm.valid">Guardar</ion-button>
+  </form>
+</ion-content>

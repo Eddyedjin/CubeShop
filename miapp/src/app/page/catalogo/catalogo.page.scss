@@ -1,0 +1,109 @@
+.responsive-img {
+  width: 100%;
+  /* O ajusta al tamaño deseado */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: cover;
+  /* Recorta la imagen si es necesario para encajar */
+}
+
+.search-bar {
+  position: sticky;
+  /* Fija la posición */
+  top: 0;
+  /* Posición desde la parte superior */
+  z-index: 1000;
+  /* Asegúrate de que esté por encima de otros elementos */
+  background: white;
+  /* Fondo blanco para la barra */
+  padding: 10px;
+  /* Espaciado alrededor */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Sombra para un efecto de profundidad */
+}
+
+ion-searchbar {
+  width: 100%;
+  /* Asegúrate de que la barra de búsqueda ocupe todo el ancho */
+}
+
+/* From Uiverse.io by Amine-maker */
+.article-wrapper {
+  width: 100%;
+  /* Se ajusta al ancho del contenedor */
+  max-width: 300px;
+  /* Ancho máximo */
+  height: auto;
+  /* Altura automática */
+  transition: 0.15s all ease-in-out;
+  border-radius: 10px;
+  padding: 10px;
+  /* Espaciado interno */
+  border: 4px solid transparent;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centra el contenido */
+  gap: 15px;
+  /* Espaciado entre la imagen y el texto */
+}
+
+.article-wrapper:hover {
+  box-shadow: 10px 10px 0 #fdd835, 20px 20px 0 #fbc02d;
+  /* Sombra amarilla */
+  border-color: #fbc02d;
+  /* Borde amarillo al pasar el ratón */
+  transform: translate(-10px, -10px);
+}
+
+.right-pad {
+  padding-right: 32px;
+}
+
+.container-project {
+  width: 100%;
+  /* Ancho completo */
+  height: auto;
+  /* Altura automática */
+  aspect-ratio: 1;
+  /* Mantiene la relación de aspecto */
+  background: linear-gradient(135deg, #ffeb3b, #fbc02d);
+  /* Gradiente de amarillos */
+  border-radius: 10px;
+  /* Redondeo en las esquinas */
+  overflow: hidden;
+  /* Evita que la imagen sobresalga */
+}
+
+.container-project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Mantiene la proporción y llena el contenedor */
+}
+
+.project-info {
+  padding: 15px 0;
+  /* Espaciado superior e inferior aumentado */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Espacio entre elementos */
+  text-align: center;
+  /* Centra el texto */
+}
+
+.project-title {
+  font-size: 1.6em;
+  /* Tamaño de fuente ajustado */
+  margin: 0;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* Evita saltos de línea */
+  color: black;
+  /* Color del texto */
+}

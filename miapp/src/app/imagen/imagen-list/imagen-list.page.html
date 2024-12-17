@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Imagenes</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      <font color="yellow">
+        <ion-button [routerLink]="['/imagen-add'] " class="custom-button">Agregar</ion-button>
+        <ion-button class="custom-button" (click)="recargar()">Recargar</ion-button>
+      </font>
+    </ion-label>
+  </ion-item>
+  
+  <ion-list padding>
+    <!-- Recorremos el arreglo de registros utilizando item-->
+    <ion-item *ngFor="let p of this.imagenes">
+      <!-- Icono al inicio (start) -->
+      <img [src]="p.ruta" class="responsive-img" alt="{{ p.id }}" slot="start" style="width: 40px; height: 40px;"/>
+      <!-- Campos de item -->
+      <ion-label>
+        <h2>{{p.nombre}}</h2>
+      </ion-label>
+      
+      <!-- Botones de acción -->
+      <!-- routerlink salta a otra pagina-->
+      <ion-button [routerLink]="['/imagen-edit/',p?.id]" class="custom-button">Edit</ion-button><br />
+      <!-- routerlink salta a otra pagina, pero con id del item-->
+      <ion-button [routerLink]="['/imagen-detail/',p?.id]" class="custom-button">Detail</ion-button><br />
+    </ion-item>
+  </ion-list>
+</ion-content>

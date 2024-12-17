@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Editar Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="usuarioForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">ID del Usuario</ion-label>
+      <ion-input type="text" [value]="usuario.id" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="usu_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ap Paterno</ion-label>
+      <ion-input type="text" formControlName="usu_app"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ap Materno</ion-label>
+      <ion-input type="text" formControlName="usu_apm"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input type="text" formControlName="usu_correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="text" formControlName="usu_contrasenia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">ID de Tipo</ion-label>
+      <ion-input type="text" formControlName="usu_id_tipo"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!usuarioForm.valid">Guardar</ion-button>
+  </form>
+</ion-content>

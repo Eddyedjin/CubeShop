@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalles del Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="producto">
+    <ion-card-header>
+      <ion-card-title>{{ producto.nombre }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <p>Id: {{ producto.id }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Precio: {{ producto.precio | currency }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Descripción: {{ producto.descripcion }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Color: {{ producto.color }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Stock: {{ producto.stock }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Activo: {{ producto.activo ? 'Sí' : 'No' }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Id imagen: {{ producto.id_img }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Id tipo: {{ producto.id_tipo }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Id sucursal: {{ producto.id_sucursal }}</p>
+      </ion-item>
+      <ion-button type="button" shape="round" color="primary" expand="block"
+        [routerLink]="['/producto-edit', producto.id]">
+        Editar
+      </ion-button>
+      <ion-button type="button" shape="round" color="danger" expand="block" (click)="delete(producto.id)">
+        Eliminar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ofertas</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let oferta of ofertas">
+      <ion-img src="../../../oferta.img.ruta" alt="{{ oferta.nombre }}"></ion-img>
+      <ion-label>
+        <h2>{{ oferta.nombre }}</h2>
+        <p>Descuento: {{ oferta.descuento }}%</p>
+        <p>Desde: {{ oferta.fechaInicio }}</p>
+        <p>Hasta: {{ oferta.fechaFin }}</p>
+      </ion-label>
+    </ion-card>
+  </ion-list>
+</ion-content>

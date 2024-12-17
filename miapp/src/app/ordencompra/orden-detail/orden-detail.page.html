@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle Orden de Compra</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="orden">
+    <ion-card-header>
+      <ion-card-title>ID: {{orden.id}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!--Proveedor-->
+      <ion-item>
+        <p>Nombre Proveedor: </p>
+        <p> {{orden.proveedor}}</p>
+      </ion-item>
+      <!--Fecha Orden Compra-->
+      <ion-item>
+        <p>Fecha de Orden: </p>
+        <p> {{orden.fecha_Orden}}</p>
+      </ion-item>
+      <!--Cantidad-->
+      <ion-item>
+        <p>Cantidad Productos: </p>
+        <p> {{orden.cantidad}} </p>
+      </ion-item>
+      <!--Precio Unitario-->
+      <ion-item>
+        <p>Precio Unitario: </p>
+        <p> ${{orden.precioUnitario}}</p>
+      </ion-item>
+      <!--Total-->
+      <ion-item>
+        <p>Total: </p>
+        <p> ${{orden.total}}</p>
+      </ion-item>
+      <!--id_producto-->
+      <ion-item>
+        <p>Id Producto: </p>
+        <p> {{orden.id_producto}}</p>
+      </ion-item>
+      <!--id_sucursal-->
+      <ion-item>
+        <p>Id Usuario: </p>
+        <p> {{orden.id_usuario}}</p>
+      </ion-item>
+      
+      <ion-button type="button" shape="round" color="primary" expand="block"
+        [routerLink]="['/orden-edit', orden.id]">
+        Editar
+      </ion-button>
+      <ion-button type="button" shape="round" color="danger" expand="block" (click)="delete(orden.id)">
+        Eliminar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuarios</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>
+      <font color="yellow">
+        <ion-button [routerLink]="['/usuario-add'] " class="custom-button">Agregar</ion-button>
+        <ion-button class="custom-button" (click)="recargar()">Recargar</ion-button>
+      </font>
+    </ion-label>
+  </ion-item>
+  
+  <ion-list padding>
+    <!-- Recorremos el arreglo de registros utilizando item-->
+    <ion-item *ngFor="let p of usuarios">
+      <!-- Icono al inicio (start) -->
+      <ion-icon name="person" slot="start"></ion-icon>
+      
+      <!-- Campos de item -->
+      <ion-label>
+        <h4>{{p.correoelectronico}}</h4>
+        <p>Nombre: {{p.nombre}}</p>
+      </ion-label>
+      
+      <!-- Botones de acción -->
+      <!-- routerlink salta a otra pagina-->
+      <ion-button [routerLink]="['/usuario-edit/',p.id]" class="custom-button">Edit</ion-button><br />
+      <!-- routerlink salta a otra pagina, pero con id del item-->
+      <ion-button [routerLink]="['/usuario-detail/',p.id]" class="custom-button">Detail</ion-button><br />
+    </ion-item>
+  </ion-list>
+</ion-content>

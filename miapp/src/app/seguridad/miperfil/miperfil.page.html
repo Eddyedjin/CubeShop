@@ -1,0 +1,78 @@
+<ion-header>
+  <!-- Barra superior de la página -->
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Estructura de la página usando un grid -->
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8">
+        <div class="profile-container">
+          <!-- Imagen de perfil -->
+          <ion-img [src]="usuario.imagenPerfil" class="profile-img"></ion-img>
+          
+          <!-- Botón para cambiar el tipo de perfil -->
+          <ion-button (click)="cambiarTipoPerfil()" size="small">Cambiar Tipo de Perfil</ion-button>
+          
+          <!-- Información del perfil del usuario -->
+          <ion-text>
+            <p>Tipo de Perfil: <strong>{{ usuario.tipoPerfil }}</strong></p> <!-- Mostrar tipo de perfil -->
+            <h2>{{ usuario.nombre }} {{ usuario.app }} {{ usuario.apm }}</h2>
+            <p>Email: {{ usuario.correoelectronico }}</p>
+            <p>Teléfono: {{ usuario.telefono }}</p>
+            <p>Dirección: {{ usuario.direccion }}</p>
+          </ion-text>
+           
+          <!-- Botón para editar el perfil -->
+          <ion-button expand="full" (click)="editarPerfil()">Editar Perfil</ion-button>
+
+          <!-- Sección de configuraciones y opciones -->
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Configuraciones y Opciones</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list>
+                <!-- Opción para configuración de privacidad -->
+                <ion-item button (click)="privacidad()">
+                  <ion-icon name="lock-closed" slot="start"></ion-icon>
+                  <ion-label>Configuración de Privacidad</ion-label>
+                </ion-item>
+
+                <!-- Opción para preferencias de notificaciones -->
+                <ion-item button (click)="notificacion()">
+                  <ion-icon name="notifications" slot="start"></ion-icon>
+                  <ion-label>Preferencias de Notificaciones</ion-label>
+                </ion-item>
+
+                <!-- Opción para Cambiar clave -->
+                <ion-item button (click)="cambiarClave()">
+                  <ion-icon name="key" slot="start"></ion-icon>
+                  <ion-label>Cambiar Clave</ion-label>
+                </ion-item>
+
+                <!-- Opción para Quienes Somos -->
+                <ion-item button (click)="quienesSomos()">
+                  <ion-icon name="people-outline" slot="start"></ion-icon>
+                  <ion-label>Quienes Somos</ion-label>
+                </ion-item>
+
+                <!--Cerrar sesion-->
+                <ion-item detail="true" (click)="logout()">
+                  <ion-label>Cerrar sesion</ion-label>
+                  <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

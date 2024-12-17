@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalles de la Sucursal</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="sucursal">
+    <ion-card-header>
+      <ion-card-title>{{ sucursal.nombre }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <p>Id: {{ sucursal.id }}</p>
+      </ion-item>
+      <ion-item>
+        <p>id_Direccion: {{ sucursal.id_direccion }}</p>
+      </ion-item>
+      <ion-button type="button" shape="round" color="primary" expand="block"
+        [routerLink]="['/sucursal-edit', sucursal.id]">
+        Editar
+      </ion-button>
+      <ion-button type="button" shape="round" color="danger" expand="block" (click)="delete(sucursal.id)">
+        Eliminar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

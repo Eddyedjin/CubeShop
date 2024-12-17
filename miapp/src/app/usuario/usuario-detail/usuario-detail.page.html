@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuario detail</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngIf="usuario">
+    <ion-card-header>
+      <ion-card-title>{{usuario.correoelectronico}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <p>Nombre:</p>
+        <p>{{ usuario.nombre }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Apellidos:</p>
+        <p>{{ usuario.app }} {{ usuario.apm }}</p>
+      </ion-item>
+      <ion-item>
+        <p>Contraseña:</p>
+        <p>{{ usuario.contrasenia }}</p>
+      </ion-item>
+      <ion-item>
+        <p>ID Tipo Usuario:</p>
+        <p>{{ usuario.id_tipo_user }}</p>
+      </ion-item>
+      <ion-button shape="round" color="primary" expand="block" [routerLink]="['/usuario-edit', usuario.id]">Editar</ion-button>
+      <ion-button shape="round" color="danger" expand="block" (click)="delete(usuario.id)" >Eliminar</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card *ngIf="!usuario">
+    <ion-card-content>
+      <p>No se encontraron detalles del usuario.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Añadir oferta</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="ofertaForm" (ngSubmit)="onFormSubmit()">
+    <!--Nombre-->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="of_nombre"></ion-input>
+    </ion-item>
+
+    <!--Descuento-->
+    <ion-item>
+      <ion-label position="floating">Descuento</ion-label>
+      <ion-input type="text" formControlName="of_descuento"></ion-input>
+    </ion-item>
+   
+    <!--Fecha Inicio-->
+    <ion-item>
+      <ion-label position="floating">Fecha Inicio</ion-label>
+      <ion-input type="text" formControlName="of_fechaInicio"></ion-input>
+    </ion-item>
+
+    <!--Fecha Fin-->
+    <ion-item>
+      <ion-label position="floating">Fecha Fin</ion-label>
+      <ion-input type="text" formControlName="of_fechaFin"></ion-input>
+    </ion-item>
+
+    <!--Id Producto-->
+    <ion-item>
+      <ion-label position="floating">Id Producto</ion-label>
+      <ion-input type="text" formControlName="of_id_producto"></ion-input>
+    </ion-item>
+    
+    <ion-button type="submit" shape="round" color="primary" expand="block"
+      [disabled]="!ofertaForm.valid">Submit</ion-button>
+  </form>
+</ion-content>

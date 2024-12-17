@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid [fixed]="true">
+    <form class="form">
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col>
+          <p class="titulo-registro">Login</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <p class="message">Inicia sesión ahora para conseguir acceso completo a nuestra app.</p>
+      </ion-row>
+      <!--Usuario-->
+      <ion-item>
+        <ion-label position="floating">Correo: </ion-label>
+        <ion-input [(ngModel)]="credenciales.correoelectronico" name="correoelectronico"></ion-input>
+      </ion-item>
+      <!--Contraseña-->
+      <ion-item>
+        <ion-label position="floating">Contraseña: </ion-label>
+        <ion-input type="password" [(ngModel)]="credenciales.contrasenia" name="contrasenia"></ion-input>
+      </ion-item>
+      <!---->
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col>
+          <ion-button (click)="login()" expand="full" class="login-button" type="submit">Iniciar sesión</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <p class="signin">¿No tienes una cuenta? <a [routerLink]="['/seguridad/registro']">Registrarse</a></p>
+      </ion-row>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <p class="forgot-password">
+          <a [routerLink]="['/seguridad/recuperarclave']">¿Olvidaste tu contraseña?</a>
+        </p>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

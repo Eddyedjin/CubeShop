@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Configuración de Privacidad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8">
+        <ion-list>
+          <ion-item>
+            <ion-label>¿Quién puede ver mi perfil?</ion-label>
+            <ion-toggle slot="end"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Mostrar estado en línea</ion-label>
+            <ion-toggle slot="end"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="full" (click)="regresar()">Regresar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

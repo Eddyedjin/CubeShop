@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Nueva Direccion</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="direccionForm" (ngSubmit)="onFormSubmit()">
+    <!--Region-->
+    <ion-item>
+      <ion-label position="floating">Region</ion-label>
+      <ion-input type="text" formControlName="direc_region"></ion-input>
+    </ion-item>
+   
+    <!--comuna-->
+    <ion-item>
+      <ion-label position="floating">Comuna</ion-label>
+      <ion-input type="text" formControlName="direc_comuna"></ion-input>
+    </ion-item>
+
+    <!--calle-->
+    <ion-item>
+      <ion-label position="floating">Calle</ion-label>
+      <ion-input type="text" formControlName="direc_calle"></ion-input>
+    </ion-item>
+
+    <!--piso-->
+    <ion-item>
+      <ion-label position="floating">Piso</ion-label>
+      <ion-input type="text" formControlName="direc_piso"></ion-input>
+    </ion-item>
+
+    <!--apartamento-->
+    <ion-item>
+      <ion-label position="floating">Apartamento</ion-label>
+      <ion-input type="text" formControlName="direc_apartamento"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" shape="round" color="primary" expand="block" 
+      [disabled]="!direccionForm.valid">Submit</ion-button>
+  </form>
+</ion-content>

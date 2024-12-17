@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Añadir Orden de Compra</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="ordenForm" (ngSubmit)="onFormSubmit()">
+    <!--Proveedor-->
+    <ion-item>
+      <ion-label position="floating">Nombre Proveedor</ion-label>
+      <ion-input type="text" formControlName="oc_proveedor"></ion-input>
+    </ion-item>
+
+    <!--Fecha Orden-->
+    <ion-item>
+      <ion-label position="floating">Fecha de Orden</ion-label>
+      <ion-input type="text" formControlName="oc_fecha_Orden"></ion-input>
+    </ion-item>
+   
+    <!--Cantidad-->
+    <ion-item>
+      <ion-label position="floating">Cantidad de Productos</ion-label>
+      <ion-input type="number" formControlName="oc_cantidad"></ion-input>
+    </ion-item>
+
+    <!--Precio Unitario-->
+    <ion-item>
+      <ion-label position="floating">Precio Unitario</ion-label>
+      <ion-input type="number" formControlName="oc_precioUnitario"></ion-input>
+    </ion-item>
+
+    <!--Total-->
+    <ion-item>
+      <ion-label position="floating">Total Orden de Compra</ion-label>
+      <ion-input type="number" formControlName="oc_total"></ion-input>
+    </ion-item>
+
+    <!--Id Producto-->
+    <ion-item>
+      <ion-label position="floating">Id Producto</ion-label>
+      <ion-input type="text" formControlName="oc_id_producto"></ion-input>
+    </ion-item>
+
+    <!--Id Usuario-->
+    <ion-item>
+      <ion-label position="floating">Id Usuario</ion-label>
+      <ion-input type="text" formControlName="oc_id_usuario"></ion-input>
+    </ion-item>
+    
+    <ion-button type="submit" shape="round" color="primary" expand="block"
+      [disabled]="!ordenForm.valid">Guardar</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Quiénes Somos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8">
+        <!-- Tarjeta Principal -->
+        <ion-card>
+          <img src="assets/sobreNosotros/portada.png" alt="Banner de la empresa" />
+          <ion-card-header>
+            <ion-card-title>Sobre Nosotros</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="text-justify">
+              Bienvenido a <strong>Cube Shop Ch</strong>, tu tienda en línea para los mejores cubos Rubik y accesorios. Fundada en <strong>2024</strong>, nuestra misión es ofrecerte una experiencia de compra excepcional con productos de alta calidad para todos los entusiastas y coleccionistas de cubos Rubik.
+            </p>
+            <p class="text-justify">
+              En <strong>Cube Shop Ch</strong>, nos dedicamos a brindarte una amplia selección de cubos Rubik y accesorios para satisfacer tus necesidades. Nuestro equipo está aquí para ayudarte a encontrar lo que buscas y asegurar tu completa satisfacción.
+            </p>
+            <p class="text-justify">
+              ¡Gracias por elegirnos y por apoyar nuestra pasión por los cubos Rubik!
+            </p>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Lista de Miembros del Equipo -->
+        <ion-list>
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src="assets/sobreNosotros/Rodrigo.jpeg" alt="Miembro del equipo 1">
+            </ion-avatar>
+            <ion-label>
+              <h2>Rodrigo Santis</h2>
+              <p class="text-justify">Fundador. Llidera nuestra visión y estrategia para ofrecerte los mejores productos.</p>
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src="assets/sobreNosotros/AliciaCarrasco.jpg" alt="Miembro del equipo 2">
+            </ion-avatar>
+            <ion-label>
+              <h2>Alicia Carrasco</h2>
+              <p class="text-justify">Especialista en Atención al Cliente. Se encarga de resolver tus dudas y asegurar tu satisfacción.</p>
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src="assets/sobreNosotros/Edgardo.jpg" alt="Miembro del equipo 3">
+            </ion-avatar>
+            <ion-label>
+              <h2>Edgardo Gutierrez</h2>
+              <p class="text-justify">Director de Operaciones. Se asegura de que todo funcione eficientemente y sin problemas.</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-button expand="full" (click)="regresar()">Regresar</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

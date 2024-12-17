@@ -1,0 +1,25 @@
+.profile-container {
+    text-align: center; // Centra el texto y los elementos dentro del contenedor
+    padding: 20px;      // Añade espacio alrededor del contenido
+  }
+  
+  .profile-img {
+    width: 150px;       // Establece el ancho de la imagen de perfil
+    height: 150px;      // Establece la altura de la imagen de perfil
+    border-radius: 75px; // Hace la imagen circular (radio igual a la mitad del ancho/alto)
+    object-fit: cover;  // Asegura que la imagen cubra el área sin deformarse
+    margin-bottom: 10px; // Espacio debajo de la imagen
+    display: block;      // Asegura que la imagen se comporte como un bloque para centrar
+    margin-left: auto;   // Centra la imagen horizontalmente
+    margin-right: auto;  // Centra la imagen horizontalmente
+  }
+  
+  
+  ion-card {
+    margin-top: 20px;   // Espacio arriba del card
+  }
+  
+  ion-item {
+    --padding-start: 16px; // Ajusta el padding del inicio para los elementos dentro del ion-item
+  }
+  

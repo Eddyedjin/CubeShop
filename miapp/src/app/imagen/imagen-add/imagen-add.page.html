@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Nueva Imagen </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="imagenForm" (ngSubmit)="onFormSubmit()">
+    <!--Nombre-->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="img_name"></ion-input>
+    </ion-item>
+   
+    <!--id_direccion-->
+    <ion-item>
+      <ion-label position="floating">Ruta</ion-label>
+      <ion-input type="text" formControlName="img_ruta"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="primary" expand="block"
+      [disabled]="!imagenForm.valid">Submit</ion-button>
+  </form>
+</ion-content>

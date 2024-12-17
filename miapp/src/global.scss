@@ -1,0 +1,264 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+ion-menu::part(backdrop) {
+  background-color: rgba(196, 204, 146, 0.5);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+}
+
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+ion-img::part(image) {
+  border-radius: 24px;
+}
+
+.center-title {
+  text-align: center;
+  /* Asegura que el texto del título esté centrado */
+}
+
+.responsive-img {
+  width: 100%;
+  height: 200px;
+  /* Ajusta la altura según tus necesidades */
+  object-fit: cover;
+  /* Mantiene la proporción de la imagen y cubre el área del contenedor */
+}
+
+ion-searchbar.custom {
+  --background: #65B6F3;
+  --color: #fff;
+  --placeholder-color: #fff;
+  --icon-color: #fff;
+  --clear-button-color: #fff;
+
+  --border-radius: 24px;
+}
+
+ion-searchbar.ios.custom {
+  --cancel-button-color: #19422d;
+}
+
+ion-searchbar.md.custom {
+  --cancel-button-color: #fff;
+}
+
+ion-label.enfasis {
+  color: #090105;
+  /* Color del texto */
+  background-color: #EDAB3B;
+  /* Color de fondo */
+  border-radius: 24px;
+  /* Bordes redondeados */
+  padding: 10px 20px;
+  /* Espaciado interno (ajustado para más equilibrio) */
+  display: inline-block;
+  /* Ajusta el elemento para que se ajuste al contenido */
+  text-align: center;
+  /* Centra el texto dentro del label */
+  margin: 0 auto;
+  /* Centra el label dentro del contenedor */
+  font-size: 1.5rem;
+  /* Tamaño de fuente ajustado */
+  font-weight: bold;
+  /* Aumenta el peso de la fuente para mayor énfasis */
+  box-shadow: 0 4px 8px #090105;
+  /* Sombra para el fondo */
+}
+
+
+ion-button.custom-button {
+  --background: #65B6F3;
+ 
+  --border-radius: 24px;
+}
+
+ion-button.custom-button-delete {
+  --background: #f36565;
+
+  --border-radius: 24px;
+}
+
+.custom-card-size {
+  display: flex;
+  /* Usa flexbox para el diseño de dos columnas */
+  max-width: 90vw;
+  /* Ajusta el ancho máximo para que ocupe menos espacio horizontal */
+  width: 90%;
+  /* Ajusta el ancho para que sea menos ancho */
+  border-radius: 12px;
+  background-color: #f7f7a7;
+  /* Color de fondo amarillo suave */
+  color: #090105;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Añade una sombra para mejorar el estilo */
+  margin: 1rem auto;
+  /* Añade espacio alrededor del card y centra */
+  overflow: hidden;
+  /* Asegura que el contenido no se desborde */
+}
+
+.card-inner {
+  display: flex;
+  /* Organiza la imagen y el texto en una fila */
+}
+
+.card-image {
+  width: 55%;
+  /* Ajusta el ancho de la imagen para que ocupe un poco menos espacio */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: cover;
+  /* Asegura que la imagen se ajuste correctamente */
+}
+
+.card-text-content {
+  width: 45%;
+  /* Ajusta el ancho del contenido de texto para que sea ligeramente menor */
+  padding: 0.5rem;
+  /* Reduce el padding interno para que haya menos espacio vacío */
+  box-sizing: border-box;
+  /* Incluye padding y borde en el ancho total */
+  display: flex;
+  /* Usa flexbox para alinear el texto dentro del contenedor */
+  flex-direction: column;
+  /* Organiza el contenido en columna */
+  justify-content: center;
+  /* Centra el contenido verticalmente */
+}
+
+.custom-card-title {
+  font-size: 1.1rem;
+  /* Ajusta el tamaño de fuente del título */
+  font-weight: bold;
+}
+
+.custom-card-subtitle {
+  font-size: 0.9rem;
+  /* Ajusta el tamaño de fuente del subtítulo */
+  color: #666;
+}
+
+.icon-buttons {
+  display: flex;
+  flex-direction: column;
+  /* Organiza los íconos en columna */
+  margin-left: 25px;
+  /* Alinea los íconos al final del item */
+  margin-right: auto;
+  /* Espacio a la derecha de los íconos */
+}
+
+.icon-large {
+  font-size: 1.5rem;
+  /* Ajusta el tamaño de los íconos */
+  margin: 0.5rem 0;
+  /* Añade espacio entre los íconos */
+}
+
+ion-card img {
+  width: 100%;
+  /* La imagen ocupa todo el ancho del contenedor */
+  height: auto;
+  /* Mantiene la relación de aspecto de la imagen */
+  object-fit: cover;
+  /* La imagen cubrirá el contenedor manteniendo su relación de aspecto */
+  display: block;
+  /* Asegura que no haya espacios debajo de la imagen */
+}
+
+.custom-header-color {
+  // Define el color de fondo del header
+  background-color: #c0d8e8; // Color de fondo de ejemplo
+}
+
+.custom-card-title {
+  color: #090105; // Color de texto del título del card
+}
+
+.custom-card-subtitle {
+  color: #090105; // Color de texto del subtítulo del card
+}
+
+.custom-card-content {
+  color: #090105; // Color de texto del contenido del card
+}
+
+.icon-large {
+  font-size: 32px;
+  /* Ajusta el tamaño del ícono según tus necesidades */
+}
+
+.icon-spacing {
+  margin-right: 16px;
+  /* Ajusta la distancia entre los íconos */
+}
+
+button.alert-button.custom-alert-button-no {
+  background-color: #f36565;
+  color: var(--ion-color-success-contrast);
+}
+
+button.alert-button.custom-alert-button-yes {
+  background-color: var(--ion-color-success);
+  color: var(--ion-color-success-contrast);
+}
+
+.transparent-item {
+  --background: rgba(255, 255, 255, 0); // Fondo blanco con 0% opacidad
+  --ion-item-background: rgba(255, 255, 255, 0); // Fondo del item (si aplica)
+}
+
+.icon-color {
+  color: #EDAB3B;
+  font-size: 24px; 
+}
+
+.icon-color-celeste {
+  color: #65B6F3;
+  font-size: 24px; 
+}

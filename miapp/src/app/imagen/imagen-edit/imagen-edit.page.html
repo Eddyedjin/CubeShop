@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Imagen edit</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="imagenForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">ID de la imagen</ion-label>
+      <ion-input type="text" [value]="imagen.id" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de la imagen</ion-label>
+      <ion-input type="text" formControlName="img_nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ruta</ion-label>
+      <ion-input type="text" formControlName="img_ruta"></ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!imagenForm.valid">Guardar</ion-button>
+  </form>
+</ion-content>

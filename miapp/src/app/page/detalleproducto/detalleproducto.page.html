@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle del Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detalle del Producto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row class="ion-padding" *ngIf="imagen">
+    <ion-col>
+      <ion-img src="../../../../../{{this.imagen.ruta}}" alt="Imagen del Producto"></ion-img>
+      <ion-title></ion-title>
+    </ion-col>
+  </ion-row>
+  
+  <ion-card *ngIf="producto" class="producto-card">
+    <ion-card-header>
+      <ion-card-title>{{ producto.nombre }}</ion-card-title>
+      <ion-card-subtitle>Precio: ${{ producto.precio }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <h5>{{ producto.descripcion }}</h5>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="primary">
+            <ion-icon slot="start" name="cart"></ion-icon>
+            Comprar
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" color="secondary" (click)="aniadirADeseados()">
+            <ion-icon slot="start" [name]="isInWishlist ? 'bookmark' : 'bookmark-outline'"></ion-icon>
+            {{ isInWishlist ? 'En Deseados' : 'Deseados' }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
+
